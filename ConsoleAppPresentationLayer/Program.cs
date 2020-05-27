@@ -17,11 +17,11 @@ namespace ConsoleAppPresentationLayer
             //m.AddRunningTraining(new DateTime(2020, 4, 19, 12, 30, 00), 5000, new TimeSpan(0, 25, 48), null, TrainingType.Endurance, null);
             //m.AddRunningTraining(new DateTime(2020, 3, 17, 11, 0, 00), 5000, new TimeSpan(0, 28, 10), null, TrainingType.Interval, "3x700m");
             //m.AddRunningTraining(new DateTime(2020, 3, 17, 11, 0, 00), 8000, new TimeSpan(0, 42, 10), null, TrainingType.Endurance, null);
-            //Report r1=m.GenerateMonthlyCyclingReport(2020, 4);            
-            //Report r2=m.GenerateMonthlyRunningReport(2020, 4);
+            Report r1 = m.GenerateMonthlyCyclingReport(2020, 4);
+            Report r2 = m.GenerateMonthlyRunningReport(2020, 4);
             Console.WriteLine("---------------------------");
             Report r3=m.GenerateMonthlyTrainingsReport(2020, 4);
-            foreach(var s in  r3.TimeLine)
+            foreach(var s in  r1.TimeLine)
             {
                 Console.WriteLine($"{s.Item1.ToString()},{s.Item2}");
             }

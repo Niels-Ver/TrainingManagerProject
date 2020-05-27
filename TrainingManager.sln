@@ -9,6 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppPresentationLayer", "ConsoleAppPresentationLayer\ConsoleAppPresentationLayer.csproj", "{4885081F-3295-45D1-B2B8-6AEDEE27BF5C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfInterface", "WpfInterface\WpfInterface.csproj", "{704F1079-36D1-47B3-998F-73EC3054065C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D4C8F01C-3634-4ED8-8F06-0F51197BFDF5} = {D4C8F01C-3634-4ED8-8F06-0F51197BFDF5}
+		{85E9498B-C73F-401B-A014-A01D53986681} = {85E9498B-C73F-401B-A014-A01D53986681}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingTest", "TrainingTest\TrainingTest.csproj", "{4DF4BACD-42D1-46C5-8FED-99E1A1CC6762}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +35,14 @@ Global
 		{4885081F-3295-45D1-B2B8-6AEDEE27BF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4885081F-3295-45D1-B2B8-6AEDEE27BF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4885081F-3295-45D1-B2B8-6AEDEE27BF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{704F1079-36D1-47B3-998F-73EC3054065C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704F1079-36D1-47B3-998F-73EC3054065C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704F1079-36D1-47B3-998F-73EC3054065C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704F1079-36D1-47B3-998F-73EC3054065C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF4BACD-42D1-46C5-8FED-99E1A1CC6762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF4BACD-42D1-46C5-8FED-99E1A1CC6762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF4BACD-42D1-46C5-8FED-99E1A1CC6762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF4BACD-42D1-46C5-8FED-99E1A1CC6762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

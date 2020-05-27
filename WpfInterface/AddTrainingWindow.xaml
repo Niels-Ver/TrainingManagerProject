@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfInterface.AddTrainingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfInterface"
+        mc:Ignorable="d"
+        Title="Add Training" Height="400" Width="300">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label Content="Training Type"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="RunningRadioButton" Content="Running " IsChecked="True"/>
+                <RadioButton x:Name="CyclingRadioButton" Content="Cycling"/>
+            </StackPanel>
+        
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label Content="Date:"/>
+            <DatePicker>
+
+            </DatePicker>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label Content="_Start Time:" Target="{Binding ElementName=txtDistance}"/>
+            <TextBox Name="txtStartTime"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="_Distance:" Target="{Binding ElementName=txtDistance}"/>
+            <TextBox Name="txtDistance"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Label Content="_Time:" Target="{Binding ElementName=txtDistance}"/>
+            <TextBox Name="txtTime"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label Content="_Average Speed:" Target="{Binding ElementName=txtDistance}"/>
+            <TextBox Name="txtAverageSpeed"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Label Content="_Trainings Type:" />
+            <ComboBox Name="cmbTypeTraining">
+                <ComboBoxItem IsSelected="True">Interval</ComboBoxItem>
+                <ComboBoxItem>Endurance</ComboBoxItem>
+                <ComboBoxItem>Recuperation</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" Visibility="{Binding IsChecked, ElementName=CyclingRadioButton, Converter={StaticResource b2v}}">
+            <Label Content="_Bike Type:" />
+            <ComboBox Name="cmbTypeBike">
+                <ComboBoxItem IsSelected="True">RacingBike</ComboBoxItem>
+                <ComboBoxItem>IndoorBike</ComboBoxItem>
+                <ComboBoxItem>CityBike</ComboBoxItem>
+                <ComboBoxItem>MountainBike</ComboBoxItem>                
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2">
+            <Label Content="_Comments:" Target="{Binding ElementName=txtDistance}"/>
+            <TextBox Name="txtComments"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Visibility="{Binding IsChecked, ElementName=CyclingRadioButton, Converter={StaticResource b2v}}" >
+            <Label Content="_Average Wattage:" Target="{Binding ElementName=txtDistance}"/>
+            <TextBox Name="txtWattage"/>
+        </StackPanel>
+        
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="AddTraining" Click="Button_Click" Grid.Row="5" Grid.Column="1"/>
+
+    </Grid>
+</Window>
